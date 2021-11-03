@@ -1,3 +1,14 @@
+/*   Author: Kushal Nesarkar
+     Date : 10 August 2021
+     Description :
+                  Creating Hardware Thread Statically
+     About Using Hardware Thread:
+                   This program is about creating a Hardware Thread statically. 
+                   Hardware Thread is a Highest priority thread in TI-RTOS.
+                   To configure the Hardware thread first we need to configure Timer, Because timer will trigger HWI Thread.
+                   In this program HWI thread is configured to Blink LED of Tiva Microcontroller.
+*/
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/tm4c123gh6pm.h"
