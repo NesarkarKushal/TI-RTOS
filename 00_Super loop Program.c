@@ -1,3 +1,9 @@
+/*   Author: Kushal Nesarkar
+     Date : 09 August 2021
+     Description :
+                  Blinking of LED without Real Time Opertating System (RTOS).
+*/
+
 #include <stdint.h>
 #include <stdbool.h>
 
