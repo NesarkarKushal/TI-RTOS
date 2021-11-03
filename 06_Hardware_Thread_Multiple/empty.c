@@ -1,3 +1,16 @@
+/*   Author: Kushal Nesarkar
+     Date : 10 August 2021
+     Description :
+                  Creating Multipl Hardware Thread Statically
+     About Using Hardware Thread:
+                   This program is about creating a Hardware Thread statically. 
+                   Hardware Thread is a Highest priority thread in TI-RTOS.
+                   To configure the Hardware thread first we need to configure Timer, Because timer will trigger HWI Thread.
+                   In this program hardware_thread() has higest priority and hardware_thread_1() has lowest priority 
+                   hardware_thread() is triggered by Timer_Init() and it blinks led_0 and triggers lowest priority thread,
+                   in lowest priority thread led_1 will blink.The execution of these two thread will carry out through preemption manner.             
+*/
+
 #include<stdint.h>
 #include<stdbool.h>
 #include"driverlib/sysctl.h"
@@ -27,13 +40,6 @@ void Timer_Init(UArg arg0)
     period=Timer_getPeriod(timer0);
     Hwi_post(51);
 }
-
-//void Timer_Init_1(UArg arg0)
-//{
-//    period=Timer_getPeriod(timer1);
-////    Hwi_post(86);
-//}
-
 
 void hardware_thread(UArg arg0)
 {
